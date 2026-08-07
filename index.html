@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#2457E6" />
+    <meta name="description" content="每天十分钟，开口说自然美语。" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="./icons/icon.svg" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>SpeakEasy · 美语口语</title>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow" id="today-label">TODAY'S PRACTICE</p>
+          <h1 id="page-title">开始说美语</h1>
+        </div>
+        <button class="avatar" type="button" aria-label="查看学习记录" data-nav="progress">L</button>
+      </header>
+
+      <section id="view-home" class="view active" aria-labelledby="page-title">
+        <article class="hero-card">
+          <p class="streak"><span aria-hidden="true">✦</span> 连续学习 <strong id="streak-count">0</strong> 天</p>
+          <h2>今天，花 10 分钟<br />说得更自然。</h2>
+          <p id="daily-summary">学会在咖啡店自然地点单。</p>
+          <button class="primary-button" type="button" data-action="start-daily">开始今日练习 <span>→</span></button>
+        </article>
+
+        <section class="section" aria-labelledby="scenes-title">
+          <div class="section-heading"><h2 id="scenes-title">练习情境</h2><button class="text-button" type="button" data-nav="scenes">查看全部</button></div>
+          <div class="scene-grid" id="scene-preview"></div>
+        </section>
+
+        <section class="section" aria-labelledby="expression-title">
+          <div class="section-heading"><h2 id="expression-title">今日表达</h2><button class="icon-button" type="button" data-action="speak-expression" aria-label="朗读今日表达">🔊</button></div>
+          <article class="expression-card" id="expression-card"></article>
+        </section>
+      </section>
+
+      <section id="view-scenes" class="view" aria-labelledby="scenes-page-title">
+        <div class="page-intro"><p class="eyebrow">SPEAK IN CONTEXT</p><h2 id="scenes-page-title">选择一个场景</h2><p>从真实生活对话开始，练到敢开口。</p></div>
+        <div class="scene-list" id="scene-list"></div>
+      </section>
+
+      <section id="view-practice" class="view" aria-live="polite">
+        <button class="back-button" type="button" data-nav="home">← 返回首页</button>
+        <div id="practice-content"></div>
+      </section>
+
+      <section id="view-progress" class="view" aria-labelledby="progress-title">
+        <div class="page-intro"><p class="eyebrow">YOUR JOURNEY</p><h2 id="progress-title">学习记录</h2><p>小步、稳定地变得更会表达。</p></div>
+        <div class="stats-grid">
+          <article><strong id="stat-practices">0</strong><span>完成练习</span></article>
+          <article><strong id="stat-minutes">0</strong><span>练习分钟</span></article>
+          <article><strong id="stat-phrases">0</strong><span>掌握表达</span></article>
+        </div>
+        <section class="section"><div class="section-heading"><h2>最近练习</h2></div><div id="history-list" class="history-list"></div></section>
+        <button class="secondary-button" type="button" data-action="reset-progress">重置本机记录</button>
+      </section>
+    </main>
+
+    <nav class="tabbar" aria-label="主导航">
+      <button type="button" class="tab active" data-nav="home"><span>⌂</span>首页</button>
+      <button type="button" class="tab" data-nav="scenes"><span>◌</span>情境</button>
+      <button type="button" class="tab" data-nav="progress"><span>▥</span>记录</button>
+    </nav>
+
+    <div class="toast" id="toast" role="status"></div>
+    <script src="./app.js"></script>
+  </body>
+</html>

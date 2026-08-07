@@ -1,0 +1,11 @@
+{
+  "name": "SpeakEasy 美语口语",
+  "short_name": "SpeakEasy",
+  "description": "每天十分钟，开口说自然美语。",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f9faff",
+  "theme_color": "#2457e6",
+  "lang": "zh-CN",
+  "icons": [{ "src": "./icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}
